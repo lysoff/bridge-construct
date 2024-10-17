@@ -25,6 +25,10 @@
                         "name": "VK Play Game ID",
                         "desc": "Game ID, which you can find from your control panel on VKPlay.ru."
                     },
+                    "y8-game-id": {
+                        "name": "Y8 Game ID",
+                        "desc": "Game ID, which you can find from your control panel on Y8.com."
+                    },
                     "adsgram-block-id": {
                         "name": "Adsgram Block ID",
                         "desc": "Advertisement block ID, which you can find from your control panel on adsgram.ai."

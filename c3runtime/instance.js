@@ -31,7 +31,8 @@
 
             this.gameDistributionGameId = properties[2]
             this.vkPlayGameId = properties[3]
-            this.adsgramBlockId = properties[4]
+            this.y8GameId = properties[4]
+            this.adsgramBlockId = properties[5]
 
             if (properties[0]) {
                 this._runtime.AddLoadPromise(this.loadSdk(cdnUrl))
@@ -39,8 +40,8 @@
 
             this._runtime.AddLoadPromise(this.initializeSdk())
 
-            if (properties[5]) {
-                this.showInterstitialOnInit = properties[5]
+            if (properties[6]) {
+                this.showInterstitialOnInit = properties[6]
             }
 
             this.serverTime = 0
@@ -151,6 +152,10 @@
 
                         if (this.vkPlayGameId !== '') {
                             bridgeOptions.platforms['vk_play'] = { gameId: this.vkPlayGameId }
+                        }
+
+                        if (this.y8GameId !== '') {
+                            bridgeOptions.platforms['y8'] = { gameId: this.y8GameId }
                         }
 
                         if (this.adsgramBlockId !== '') {
