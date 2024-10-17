@@ -24,7 +24,7 @@
             this.conditions = C3.Plugins.PlaygamaBridge.Cnds
             this.actions = C3.Plugins.PlaygamaBridge.Acts
 
-            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.15.0/dist/playgama-bridge.js'
+            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.16.0/dist/playgama-bridge.js'
             if (properties[1] !== '') {
                 cdnUrl = properties[1]
             }
