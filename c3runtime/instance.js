@@ -24,7 +24,7 @@
             this.conditions = C3.Plugins.PlaygamaBridge.Cnds
             this.actions = C3.Plugins.PlaygamaBridge.Acts
 
-            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.16.0/dist/playgama-bridge.js'
+            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.17.0/dist/playgama-bridge.js'
             if (properties[1] !== '') {
                 cdnUrl = properties[1]
             }
@@ -32,7 +32,9 @@
             this.gameDistributionGameId = properties[2]
             this.vkPlayGameId = properties[3]
             this.y8GameId = properties[4]
-            this.adsgramBlockId = properties[5]
+            this.laggedDevId = properties[5]
+            this.laggedPublisherId = properties[6]
+            this.adsgramBlockId = properties[7]
 
             if (properties[0]) {
                 this._runtime.AddLoadPromise(this.loadSdk(cdnUrl))
@@ -40,8 +42,8 @@
 
             this._runtime.AddLoadPromise(this.initializeSdk())
 
-            if (properties[6]) {
-                this.showInterstitialOnInit = properties[6]
+            if (properties[8]) {
+                this.showInterstitialOnInit = properties[8]
             }
 
             this.serverTime = 0
@@ -157,6 +159,9 @@
                         if (this.y8GameId !== '') {
                             bridgeOptions.platforms['y8'] = { gameId: this.y8GameId }
                         }
+
+                        if (this.laggedDevId !== '' && this.laggedPublisherId !== '' ) {
+                            bridgeOptions.platforms['lagged'] = { devId: this.laggedDevId, publisherId: this.laggedPublisherId }      
 
                         if (this.adsgramBlockId !== '') {
                             bridgeOptions.platforms['telegram'] = { adsgramBlockId: this.adsgramBlockId }
