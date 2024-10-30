@@ -18,7 +18,7 @@
 'use strict'
 {
     const PLUGIN_ID = 'PlaygamaBridge'
-    const PLUGIN_VERSION = '1.16.0'
+    const PLUGIN_VERSION = '1.17.0'
     const PLUGIN_CATEGORY = 'platform-specific'
 
     const PLUGIN_CLASS = (SDK.Plugins.PlaygamaBridge = class PlaygamaBridgePlugin extends SDK.IPluginBase {
