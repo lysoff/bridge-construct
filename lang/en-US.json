@@ -29,6 +29,14 @@
                         "name": "Y8 Game ID",
                         "desc": "Game ID, which you can find from your control panel on Y8.com."
                     },
+                    "lagged-dev-id": {
+                        "name": "Lagged Dev ID",
+                        "desc": "Dev ID, which you can find from your control panel on Lagged.dev."
+                    },
+                    "lagged-publisher-id": {
+                        "name": "Lagged publisher ID",
+                        "desc": "Publisher ID, which you can find from your control panel on Lagged.dev."
+                    },
                     "adsgram-block-id": {
                         "name": "Adsgram Block ID",
                         "desc": "Advertisement block ID, which you can find from your control panel on adsgram.ai."

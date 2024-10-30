@@ -42,6 +42,8 @@
                 new SDK.PluginProperty('text', 'game-distribution-game-id', ''),
                 new SDK.PluginProperty('text', 'vk-play-game-id', ''),
                 new SDK.PluginProperty('text', 'y8-game-id', ''),
+                new SDK.PluginProperty('text', 'lagged-dev-id', ''),
+                new SDK.PluginProperty('text', 'lagged-publisher-id', ''),
                 new SDK.PluginProperty('text', 'adsgram-block-id', ''),
                 new SDK.PluginProperty('check', 'show-interstitial-on-init', true)
             ]);
