@@ -161,7 +161,11 @@
                         }
 
                         if (this.laggedDevId !== '' && this.laggedPublisherId !== '' ) {
-                            bridgeOptions.platforms['lagged'] = { devId: this.laggedDevId, publisherId: this.laggedPublisherId }      
+                            bridgeOptions.platforms['lagged'] = {
+                                devId: this.laggedDevId,
+                                publisherId: this.laggedPublisherId
+                            }
+                        }
 
                         if (this.adsgramBlockId !== '') {
                             bridgeOptions.platforms['telegram'] = { adsgramBlockId: this.adsgramBlockId }
