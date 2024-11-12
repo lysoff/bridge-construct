@@ -273,6 +273,15 @@
         IsPaymentsSupported() {
             return window.bridge.payments.isSupported
         },
+        IsPaymentsGetCatalogSupported() {
+            return window.bridge.payments.isGetCatalogSupported
+        },
+        IsPaymentsGetPurchasesSupported() {
+            return window.bridge.payments.isGetPurchasesSupported
+        },
+        IsPaymentsConsumePurchaseSupported() {
+            return window.bridge.payments.isConsumePurchaseSupported
+        },
 
         OnPaymentsPurchaseCompleted() {
             return true
