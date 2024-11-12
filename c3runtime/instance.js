@@ -24,7 +24,7 @@
             this.conditions = C3.Plugins.PlaygamaBridge.Cnds
             this.actions = C3.Plugins.PlaygamaBridge.Acts
 
-            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.17.0/dist/playgama-bridge.js'
+            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.18.0/dist/playgama-bridge.js'
             if (properties[1] !== '') {
                 cdnUrl = properties[1]
             }
@@ -34,7 +34,8 @@
             this.y8GameId = properties[4]
             this.laggedDevId = properties[5]
             this.laggedPublisherId = properties[6]
-            this.adsgramBlockId = properties[7]
+            this.facebookPlacementId = properties[7]
+            this.adsgramBlockId = properties[8]
 
             if (properties[0]) {
                 this._runtime.AddLoadPromise(this.loadSdk(cdnUrl))
@@ -42,8 +43,8 @@
 
             this._runtime.AddLoadPromise(this.initializeSdk())
 
-            if (properties[8]) {
-                this.showInterstitialOnInit = properties[8]
+            if (properties[9]) {
+                this.showInterstitialOnInit = properties[9]
             }
 
             this.serverTime = 0
@@ -165,6 +166,10 @@
                                 devId: this.laggedDevId,
                                 publisherId: this.laggedPublisherId
                             }
+                        }
+
+                        if (this.facebookPlacementId !== '') {
+                            bridgeOptions.platforms['facebook'] = { placementId: this.facebookPlacementId }
                         }
 
                         if (this.adsgramBlockId !== '') {
