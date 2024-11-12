@@ -18,7 +18,7 @@
 'use strict'
 {
     const PLUGIN_ID = 'PlaygamaBridge'
-    const PLUGIN_VERSION = '1.17.0'
+    const PLUGIN_VERSION = '1.18.0'
     const PLUGIN_CATEGORY = 'platform-specific'
 
     const PLUGIN_CLASS = (SDK.Plugins.PlaygamaBridge = class PlaygamaBridgePlugin extends SDK.IPluginBase {
@@ -44,6 +44,7 @@
                 new SDK.PluginProperty('text', 'y8-game-id', ''),
                 new SDK.PluginProperty('text', 'lagged-dev-id', ''),
                 new SDK.PluginProperty('text', 'lagged-publisher-id', ''),
+                new SDK.PluginProperty('text', 'facebook-placement-id', ''),
                 new SDK.PluginProperty('text', 'adsgram-block-id', ''),
                 new SDK.PluginProperty('check', 'show-interstitial-on-init', true)
             ]);

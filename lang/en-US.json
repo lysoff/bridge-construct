@@ -37,6 +37,10 @@
                         "name": "Lagged publisher ID",
                         "desc": "Publisher ID, which you can find from your control panel on Lagged.dev."
                     },
+                    "facebook-placement-id": {
+                        "name": "Facebook Placement ID",
+                        "desc": "Placement ID, which you can find from your control panel on developers.facebook.com."
+                    },
                     "adsgram-block-id": {
                         "name": "Adsgram Block ID",
                         "desc": "Advertisement block ID, which you can find from your control panel on adsgram.ai."
