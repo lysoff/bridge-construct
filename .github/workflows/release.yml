@@ -1,0 +1,53 @@
+
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+        tag_name:
+          description: 'Version tag v*'
+          required: true
+          type: string
+        release_name: 
+          description: 'Release name'
+          required: true
+          type: string
+        summary:
+          description: 'Release summary'
+          required: true
+          type: string
+
+jobs:
+  build:
+    permissions: write-all
+    name: Create release
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Zip files
+        run: zip -r playgama_bridge.zip ./*
+
+      - name: Rename file 
+        run: sudo mv playgama_bridge.zip playgama_bridge_${{inputs.tag_name}}.c3addon
+
+      # Upload
+      - name: Upload .unitypackage
+        uses: actions/upload-artifact@v4
+        with:
+          name: playgama-bridge
+          path: playgama_bridge_${{inputs.tag_name}}.c3addon
+
+      # Release
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag_name }}
+          name: ${{ inputs.release_name }}
+          body: ${{inputs.summary}}
+          files: playgama_bridge_${{inputs.tag_name}}.c3addon
+          
