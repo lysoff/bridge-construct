@@ -44,12 +44,10 @@ jobs:
           path: bridge/
           token: ${{ secrets.TRIGGER_REPO_TOKEN }}
 
-      - name: Show fldrs
-        run: ls -d */
-
       # Build bridge
       - name: Build bridge
         run: | 
+          ls -d */
           cd bridge
           npm i 
           npm run build
