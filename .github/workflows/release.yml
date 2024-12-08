@@ -47,6 +47,7 @@ jobs:
       # Build bridge
       - name: Build bridge
         run: | 
+          echo "123"
           ls -d */
           cd bridge
           npm i 
