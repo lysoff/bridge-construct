@@ -49,7 +49,7 @@ jobs:
         run: | 
           echo "123"
           ls -d */
-          cd bridge
+          sudo cd bridge
           npm i 
           npm run build
           data=$(sed -n '2p' "dist/playgama-bridge.js")
