@@ -55,6 +55,9 @@ jobs:
           npm run build
           data=$(sed -n '2p' "dist/playgama-bridge.js")
           echo "$data" > "dist/playgama-bridge.js"
+          cd ..
+          sudo mv bridge/dist/playgama-bridge.js playgama-bridge.js
+          
 
      # Upload
       - name: Upload .unitypackage
@@ -63,7 +66,7 @@ jobs:
           name: playgama-bridge
           path: |
             playgama_bridge_${{inputs.tag_name}}.c3addon
-            bridge/dist/playgama-bridge.js
+            playgama-bridge.js
           
       # Release
       - name: Release
@@ -74,5 +77,5 @@ jobs:
           body: ${{inputs.summary}}
           files: |
             playgama_bridge_${{inputs.tag_name}}.c3addon
-            bridge/dist/playgama-bridge.js
+            playgama-bridge.js
           
